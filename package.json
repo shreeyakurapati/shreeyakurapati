@@ -1,8 +1,8 @@
 {
-  "name": "the-mind-museum",
+  "name": "shreeya-kurapati-site",
   "version": "1.0.0",
   "private": true,
-  "description": "Personal site of Shreeya Kurapati. Static, zero dependencies.",
+  "description": "Personal website of Shreeya Kurapati. Static, no dependencies.",
   "scripts": { "start": "node server.js" },
   "license": "UNLICENSED"
 }
