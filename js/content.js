@@ -3,7 +3,7 @@ const S={
 research:{n:'Research',d:'Research projects, papers, and talks.',x:.2,y:.32},
 community:{n:'Community',d:'Groups I run and volunteer work.',x:.78,y:.28},
 projects:{n:'Projects',d:'Things I’ve built and started.',x:.3,y:.76},
-writing:{n:'Writing',d:'Books and journals.',x:.7,y:.74},
+writing:{n:'Writing',d:'Books, poetry, and journals.',x:.7,y:.74},
 questions:{n:'Questions',d:'Open questions and ideas I haven’t tried yet.',x:.5,y:.5}};
 const P=[
 {id:'rbc',s:'research',t:'Plasma and red blood cells',d:'How cold atmospheric plasma changes the shape of red blood cells in different salt solutions. First-author research with mentors at the Intelliscience Institute.',tags:['plasma','biology','image analysis'],rel:['vision','retina','igem'],
@@ -60,14 +60,21 @@ const P=[
  sec:{
  'Overview':'I am starting a computer vision project with ASDRP and leading the student team. The goal is something concrete enough to present at a conference.',
  'Why':'It builds on the image analysis I have done on blood cells and extends it to machine learning methods.'}},
-{id:'forrest',s:'community',t:'ForREST',d:'A student-led workshop group that teaches how stress, memory, and studying work. It is my Girl Scouts Gold Award project.',tags:['learning science','stress','community'],rel:['synapse','service','bbay'],
+{id:'rubberduck',s:'research',t:'RubberDuck AI internship',d:'User-testing, and research on how children perceive things and how fast they learn when they are taught, with the aim of designing experiments that could become a paper.',tags:['learning science','AI','education'],rel:['forrest','synapse','retina'],
+ meta:['Intern','RubberDuck AI','In progress'],
+ tl:[['2026','User-testing, and background reading on how children perceive things and learn at different paces']],
+ sec:{
+ 'Overview':'I am interning with RubberDuck AI. The work combines user-testing with reading about the science of how children perceive things and how fast they learn when they are being taught.',
+ 'What comes next':'Designing experiments on how children learn at different paces. If they go well, they could become a paper.',
+ 'My role':'Intern.'}},
+{id:'forrest',s:'community',t:'ForREST',d:'A student-led workshop group that teaches how stress, memory, and studying work. It is my Girl Scouts Gold Award project.',tags:['learning science','stress','community'],rel:['synapse','service','bbay','rubberduck'],
  meta:['Founder','Gold Award project','In development'],tl:[],
  sec:{
  'The problem':'Many students go through high school under heavy academic pressure without ever learning how stress, memory, cognitive load, and studying actually work. ForREST focuses on the move from 8th to 9th grade and on the high-pressure school culture of the Bay Area.',
  'The approach':'Student-led workshops built on research rather than productivity trends: about 10 to 15 minutes of explanation, followed by 20 to 30 minutes of activities. Students from 8th grade up can join, and high schoolers lead.',
  'How it is organized':'Small teams handle social media, content, events, and retention, and the group coordinates on Discord. Right now they are building the content, an outreach list, and the website.',
  'My role':'I started ForREST and run it as my Gold Award project, working with a team of student leads.'}},
-{id:'synapse',s:'community',t:'Synapse Sisters',d:'A student-led neuroscience club for girls.',tags:['neuroscience','community','learning science'],rel:['forrest','retina','sra','igem'],
+{id:'synapse',s:'community',t:'Synapse Sisters',d:'A student-led neuroscience club for girls.',tags:['neuroscience','community','learning science'],rel:['forrest','retina','sra','igem','rubberduck'],
  meta:['Founder','Weekly meetings'],tl:[['Sep 2026','First guest speaker']],
  link:['Club website','https://synapse-sisters.lovable.app/'],
  sec:{
@@ -111,7 +118,13 @@ const P=[
 {id:'ceto',s:'writing',t:'The CETO Conspiracy',d:'An anthology of stories written and published by my class.',tags:['fiction'],rel:['rulers','journal'],meta:['Class anthology','Self-published on Amazon'],tl:[],
  link:['Amazon','https://www.amazon.com/dp/B0G9H11CHS'],
  sec:{'About':'A collection of stories my class wrote and published together.'}},
-{id:'journal',s:'writing',t:'Khranicle and the KLS literary journal',d:'Managing Editor of the Khranicle and co-founder of the KLS literary journal.',tags:['editing','fiction'],rel:['ceto','rulers'],meta:['Managing Editor','Co-founder','First edition: December 2026'],tl:[],
+{id:'lastguest',s:'writing',t:'The Last Guest',d:'A four-book Homeric poem in iambic pentameter, written with Shanti, about the Phaeacians after Odysseus leaves.',tags:['poetry','fiction','Homer'],rel:['journal','rulers','ceto'],meta:['Written with Shanti','Four books','Iambic pentameter'],tl:[],
+ link:['Read the poem','#/blog/last-guest'],
+ sec:{
+ 'About':'Our Homeric fan fiction retells what happens on the island of Scheria after Odysseus leaves. Poseidon turns one Phaeacian ship to stone, and the council has to decide whether to defend their hospitality or obey the god. The poem is told from the Phaeacians’ side, a place the Odyssey leaves mostly unexplored.',
+ 'Techniques':'We borrowed Homer’s devices: starting in the middle of the action, epithets such as rosy-fingered Dawn and earth-shaker, extended similes, stories within stories, and gods who shape what mortals do.',
+ 'Themes':'Xenia (hospitality as a moral test), fate against free will, and gender inequality through Arete and Nausicaa.'}},
+{id:'journal',s:'writing',t:'Khranicle and the KLS literary journal',d:'Managing Editor of the Khranicle and co-founder of the KLS literary journal.',tags:['editing','fiction'],rel:['ceto','rulers','lastguest'],meta:['Managing Editor','Co-founder','First edition: December 2026'],tl:[],
  sec:{'Khranicle':'I am the Managing Editor.','KLS literary journal':'I co-founded it, and the first edition comes out in December.'}}
 ];
 const Q=[
@@ -121,15 +134,138 @@ const Q=[
 'How can swarm behavior be designed without trial and error?',
 'Could AI predict how a swarm of robots will move?',
 'How can image analysis pick up subtle changes in neurological conditions such as Parkinson’s disease?',
-'What do students need to understand about stress, memory, and cognitive load to study well?'];
+'What do students need to understand about stress, memory, and cognitive load to study well?',
+'How does a child’s pace of learning change which way of teaching works best?'];
 const IDEAS=[
 'A second-generation robot swarm with mecanum wheels, motors with encoders, and ESP32 boards. I have drafted the parts list but have not built it.',
 'Using AI to predict robot movement in a swarm, an idea from my team’s planning document.',
 'Applying image analysis to neurological conditions, building on my work with blood cells.',
 'Workshops for parents and physical learning products for ForREST, which came up at a leadership meeting.'];
 const N=[
-['Jul 2026 · Plasma','At 30 seconds of plasma exposure the blood cells started to clump, and longer exposures clotted, so 30 seconds became the limit for the experiment.'],
-['Nov 2025 · Swarm','Across six commands, the delay between pressing a button in the control app and the robot starting to move stayed between 0.17 and 0.21 seconds.'],
-['Jun 2026 · Reading','The gap I keep running into in swarm robotics papers: group behavior is still mostly designed by trial and error.']];
-const DOCS={};
+['Jul 2026 · Plasma','At 30 seconds of plasma exposure the blood cells started to clump, and longer exposures clotted, so 30 seconds became the limit for the experiment.','How long can the plasma run?'],
+['Nov 2025 · Swarm','Across six commands, the delay between pressing a button in the control app and the robot starting to move stayed between 0.17 and 0.21 seconds.','How fast does a robot respond?'],
+['Jun 2026 · Reading','The gap I keep running into in swarm robotics papers: group behavior is still mostly designed by trial and error.','What do swarm papers still miss?'],
+['Nov 2026 · RubberDuck AI','I am looking into the science of how children perceive things and how fast they learn when they are taught, alongside user-testing, so we can design experiments that could become a paper.','How does pace change learning?']];
+const DOCS={lastguest:[{label:'Original Google Doc',url:'https://docs.google.com/document/d/1Ku-SwElXjjJX8Tcal39rnz5MaosbWP-j4b21z86lXT0/edit?tab=t.nho70cwvow11'}]};
 const CONTACT={email:'shreeyakurapati@gmail.com'};
+/* Lab notebook logs (#/notes). p = project id. Add h, e, f (hypothesis, experiment, finding); empty ones are hidden. */
+const LAB=[
+ {
+  "p": "rbc",
+  "date": "Jul 2026",
+  "status": "Paper accepted at IEEE IECBES 2026",
+  "fig": "rbc",
+  "q": "Does the clotting seen after longer plasma exposure help wound healing, or does it show cell damage?",
+  "h": "Plasma exposure changes the osmotic environment around the cells, so plasma-treated blood should look more like blood sitting in saltier solution.",
+  "e": "Mixed whole blood with sodium chloride solutions from 0% to 5%, exposed each sample to a helium plasma jet for 0, 15, or 30 seconds, and photographed about five fields per condition.",
+  "f": "At 30 seconds the cells began to clump, and longer exposures clotted, so 30 seconds became the upper limit. Exact percentages are held until the IEEE paper is published.",
+  "cap": "Fig. 1. The experiment, start to finish. Margins mark what I noticed."
+ },
+ {
+  "p": "swarm",
+  "date": "Nov 2025",
+  "status": "Second-generation swarm planned, not built",
+  "fig": "swarm",
+  "q": "How can swarm behavior be designed without trial and error?",
+  "h": "A software interface that programs and coordinates each robot can make a swarm move together more accurately.",
+  "e": "Built Python mobile apps that send commands wirelessly to six Lafvin Arduino robots, then timed the delay between pressing a command and the robot starting to move.",
+  "f": "Across six commands, the delay stayed between 0.17 and 0.21 seconds.",
+  "cap": "Fig. 2. How a command travels from the app to the robots."
+ },
+ {
+  "p": "rubberduck",
+  "date": "Nov 2026",
+  "status": "In progress",
+  "fig": "rubberduck",
+  "q": "How does a child’s pace of learning change which way of teaching works best?",
+  "e": "User-testing, plus reading the science on how children perceive things and how fast they learn when they are taught.",
+  "f": "Experiments are next. If they go well, they could become a paper.",
+  "cap": "Fig. 3. Where the internship is headed."
+ }
+];
+/* Blog posts (#/blog). poem = books of stanzas; a blank line between stanzas is automatic, line breaks are \n. */
+const BLOG=[
+ {
+  "id": "last-guest",
+  "kind": "Poetry",
+  "t": "The Last Guest",
+  "d": "A four-book Homeric poem in iambic pentameter, told from the side of the Phaeacians after Odysseus leaves.",
+  "meta": [
+   "Written with Shanti",
+   "Homeric fan fiction",
+   "Iambic pentameter"
+  ],
+  "tags": [
+   "poetry",
+   "Homer",
+   "fan fiction"
+  ],
+  "links": [
+   [
+    "Original Google Doc",
+    "https://docs.google.com/document/d/1Ku-SwElXjjJX8Tcal39rnz5MaosbWP-j4b21z86lXT0/edit?tab=t.nho70cwvow11"
+   ]
+  ],
+  "intro": "This series of four books invites the reader to see from a perspective and place that is inadequately explored in <em>The Odyssey</em>. The Phaeacians largely differ from the rest of Homeric society; they are described as magical and are largely dependent on Poseidon. In our Homeric fan fiction, “The Last Guest,” we wrote in iambic pentameter, which is what Emily Wilson’s translation of <em>The Odyssey</em> is also written in. Though the original Homer books were written in dactylic hexameter, it is hard to implement the rhythm in English.",
+  "notes": "<p>We made annotations throughout the books. Here is a summary of all of them, and a more cohesive analysis of the elements we used and how.</p><h3>Storytelling techniques</h3><ul><li><em>In medias res</em> (beginning in the middle of the action). Our story begins when Scheria has already fallen and been punished by Poseidon. The conversation within the council shows the reader how serious the predicament is and keeps them waiting for a way to resolve it.</li><li>Framing and embedded narratives (stories within stories). Both when Alcinous begs Poseidon to let Scheria go and when the stranger preaches about <em>xenia</em> to the Phaeacians, embedded narratives reference past stories and weave in background.</li><li>Direct speech and long speeches that reveal character or values. Poseidon’s long speeches in Book 2 show his perspective on the events regarding Odysseus, and words such as ‘injustice’ frame them negatively. You can gauge his feelings from what he gets angrier at and from how he describes Odysseus as a murderer and a ‘wily’ man.</li><li>Divine intervention frames the story by shaping mortal events. This entire story is about divine intervention: Poseidon punishes the Phaeacians for showing <em>xenia</em> to Odysseus, which is a huge negative for Scheria. Alcinous and the other Phaeacians interact a lot with the gods, so those interactions can decide the fate of Scheria forever.</li></ul><h3>Language and style</h3><ul><li>Formulaic phrases and epithets. Repetition, especially in formulaic phrases and in epithets that describe characters, appears throughout. “Rosy-fingered Dawn” is used many times in <em>The Odyssey</em>, so we brought it in for repetition. We also use epithets such as “bright-eyed” for Athena and “earth-shaker” for Poseidon to highlight certain aspects of their characters.</li><li>Epic or extended similes comparing human action to nature or myth.<ul><li>The comparison of the stranger to a bird is an epic simile: it compares the stranger swimming for his life to a bird that cannot fly no matter how hard it tries.</li><li>In the first book, the ship anchored to the shore, turned to stone, is compared to a noble specimen with clipped wings.</li></ul></li><li>Symbols. The eagle and lightning represent Zeus’s presence, olive trees and silk reference Athena, and tides and horses represent Poseidon. Comparing Phaeacian ships to birds symbolizes a revoked sense of freedom, as in ‘a noble specimen with clipped wings.’ At the end of Book 4, the stone ship is symbolic of the spirit of the Phaeacians.</li><li>Diction. We use language that signifies entrapment. Birds, like ‘a noble specimen with clipped wings,’ and other references to eagles and owls let you compare Scheria to a bird in a cage trying to fly. When the man is drowning, he is prevented from escaping, much like a bird unable to fly cannot be liberated. Switching between calling the man arriving on the island ‘the man’ and ‘the stranger’ is intentional and shows how the Phaeacians are treating him.</li></ul><h3>Themes and motifs</h3><ul><li>Gender inequality (focusing on Arete and Nausicaa).<ul><li>Arete is the queen of Scheria, a figure of respect and a descendant of Poseidon. In the council scene the court respects her and considers her opinions when making decisions. When Alcinous begs Poseidon for mercy, he uses her connection to the god as an argument, which shows how stable her position is in Phaeacian society.</li><li>Nausicaa is described as beautiful, both in the <em>Odyssey</em> and in this series, with the epithet “white-armed.” Alcinous’s embedded narrative shows her to have good <em>xenia</em>, which is rare for a young girl, since <em>xenia</em> is often associated with intelligence and wealth. In ancient Greece, this would have been a revolutionary idea.</li></ul></li><li><em>Xenia</em> (hospitality as a moral test). <em>Xenia</em> is a key term in the <em>Odyssey</em> and the reason for this entire story. Poseidon did not like Scheria’s hospitality to Odysseus, which is why Scheria is in need at the start of Book 1. The stranger also tells the story of Eumaeus to show an example of good <em>xenia</em> and how it relates to status and wealth.</li><li>Fate vs. free will; mortal vs. divine agency. Once Poseidon is angry with them, the Phaeacians cannot survive. This dependence on a god’s mood and behavior limits the free will of the people of Scheria, since they have to cooperate for the sake of their lives.</li></ul>",
+  "poem": [
+   {
+    "h": "Book 1",
+    "p": [
+     "A faithless ocean surrounds Scheria.\nIn its tides once stood a singular ship,\nits hull rooted to the seafloor, akin\nto a noble specimen with clipped wings.\nThe Phaeacians stared with their eyes transfixed,\nfor such a sight was deemed impossible.\nThey stood as still as the golden palace,\nwhere, inside, conflict had begun to brew.",
+     "There, Alcinous and godlike Arete\nsat high upon two polished golden stones,\nabove the stirring Phaeacian chieftains.\n“This is the craftsmanship of the great gods,\nthey are trying to warn us of something!”\nThe nobles whispered to one another,\ntheir voices sounded frantic and restless.",
+     "Then, the great king Alcinous commanded:\n“Council, nobles, leaders of Scheria!\nMy father Nausithous had once foretold,\na time when our hospitable nature\nwould anger Poseidon, the earth-shaker.\nIt is said that he would destroy our ships,\nand bury our island with a mountain.\nIt seems that now, that time has finally come,\nfor one of our very own swift-winged ships\nstands stiff, turned to stone.\nWe gave our aid to a stranger in need\nand angered the great sea-god Poseidon,\nhis hand more fearsome than ever before.\nAlthough our hearts were pure in assisting\nOdysseus, I am led to question\nthe righteousness of our decision.\nAnswer me, should Scheria repent and\nobey Poseidon, the revered sea-god?\nOr do we instead stand by our own choice,\ndefending our decision to assist\na stranger in need, no matter the cost?”",
+     "The first to respond was Euryalus,\nson of Naubolus: “My king Alcinous,\nWe are famed for our hospitality\ntowards many lost, seafaring travelers.\nOur actions towards Odysseus were no\ndifferent. We have not committed a crime\nby assisting someone in need. Yet\nstill we are tested with such a challenge –\none of our ships is in ruin, turned to stone.\nWe should try to defend our righteous choice!\nAt sea, our defenses are strong enough\nto withstand the wrath of the great sea-god.”\nHis bold words sent waves of shock across the hall.\nMurmurs arose, rippling throughout the room.",
+     "Then Arete, her mind sharp and voice strong,\nrose from her golden throne like a goddess.\nThe air turned still as stone, all eyes followed.\nShe began, choosing her words with care:",
+     "“Yes, you speak the truth.\nOur decision to be hospitable towards\nOdysseus was assumed with good intent.\nBut we cannot forget our history.\nThe great Poseidon has long provided\nour own ships and protection. He is our\npatron god, and we are his descendants.\nWe were warned of dire consequences,\nallowing strangers within our own gates.\nIf we choose to disobey Poseidon,\nhe who controls the sea and shakes the earth,\nwe will not only be reduced in ruin\nand wreckage, but a tarnished reputation\nwill fall upon our names and legacy.\nOur hubris will soon become our downfall.”\nA minute of contemplation ensued.\nThe hall stood still with silence, the council\nof men considered her impactful words.",
+     "The virtuous Alcinous responded,\n“Arete, you speak a terrible truth.\nIndeed, we will follow the earth-shaker’s\ncommands, heeding his warning. I shall speak\nto the people, we will sacrifice twelve\nbulls to appease the dark-haired Poseidon.\nFrom now on, no foreign ships will enter\nnor leave the great island of Scheria.”",
+     "So spoke the Phaeacian king, all was settled."
+    ]
+   },
+   {
+    "h": "Book 2",
+    "p": [
+     "As early-born Dawn rose across the sea\nAlcinous looked to the sea, the waves crashed\nagainst the rocky shores, adorned with wrecks\nmade by the poor fools trying to escape",
+     "Thus he spoke, watching bulls being prepared,\nTo be sacrificed to great Poseidon\n“O dark-haired Poseidon, son of Cronus,\nOur island is suffering, the ship fixed\nas it is chained to the floor of our shores.\nOdysseus has gone, please have mercy\nWe are your people, your own descendents.\nIntelligent Nausithous, the founder\nOf our magical civilization,\nGave us your blessings, led us away from\nthe dreaded Cyclopses out to get us.\nPlease listen, O Great God, ruler of seas\nYour grand, bronze statue shines in our temple.\nPlease forgive us for your sins, we need you\nFor our ships, for our trade, for our living.”\nAnd thus the king looked to the sky, praying,\nHoping that the god might release his spell.",
+     "Stubborn Poseidon, his anger growing,\nwas unperturbed. He responded gravely\nto the king, the waves crashing around him.\n“You have aided a demon, a wily man,\nthe man who has blinded my dearest son.\nCrafty Odysseus who tricks his men.\nHe sacrifices others, and you, the king,\nhelped him, despite knowing the prophecy.”\nThe king was distraught, he pleaded further,\nOffering flowers and boats to the sea\nAnd twelve fine bulls, with great build and meat.\n“That man, the ever-cunning Odysseus\nHe lulled our hearts with stories of Cyclopses\nShowing his strength, evoking our pity,\nThat man weeped hearing the stories of Troy.\nI was fooled, O earth-shaker, forgive me,\nMy blindness was devised by Zeus himself.”",
+     "Thus, earth-shaker Poseidon’s anger grew\nHe questioned, horses stampeding around:\n“Zeus claimed your thoughts, you say, then answer me:\nWhy did your daughter, white-armed Nausicaa\nAn unmarried woman, stand unflinching\nBefore that horrid man, him standing\nBare before her with nothing but a leaf.\nShe gave him clothes and useful instructions\nShe told him of Phaeacian magic.\nYour wife, descendent of my blood, was fooled,\nShe pitied a man who so clearly feigned\nA man who stretched his stories of murder\nOf his injustice to Polyphemus.\nAs you heard calmly, I will not forgive\nSuch an unsympathetic man as you.”\nHis words sent ripples far through the ocean,\nGreat waves crashed on the shores of Scheria.",
+     "Alcinous was desperate, pleading with tears.\nHe sank to his knees, he begged one last time\nto preserve his daughter and his kingdom.",
+     "“Please have mercy, O Sea Ruler, she is young\nwe taught her <em>xenia</em> and she followed.\nWe have heard the prophecy warning us\nthat our aid would land us in deep trouble\nyet we kept on welcoming the strangers.\nOur council has decided to continue\nto worship you, to strengthen our bond.\nHave mercy on us, we have revered you\nFor three long generations, while on Scheria,\nIt is deceptive, bright-eyed Athena,\nwho made Nausicaa commit such a crime.\nO Daughter of Zeus, Pallas Athena,\ntell the truth, tell us of Odysseus\nto release the anger this man has on me!”\nAlcinous rose, looking up to the skies.\nHe took out of his pocket, a garment\nwoven by his wife, made of finest silk.\nHe gave this tribute and waited for her.",
+     "And a small olive tree grew before them\nwhere he once kneeled, its leaves spreading around.\nPosiedon, son of Cronus, watched it grow,\nhis anger growing greatly as well.\nAthena descended, her owl eyes bright,\nprepared for battle, the epitome\nof ever-lasting beauty and glory.\nShe spoke, accepting the Arete’s silk,\nShe turned to earth-shaker Poseidon,\nTo the endless water from the great tide\n“Uncle, great sea-god, Scheria worships you.\nThey were following the orders of Zeus.\nWhy do you torture Odysseus so?\nHe has just returned home to Ithaca,\nTo his wife, his son, and to his kingdom.\nWe once collaborated after Troy\nTo wreck the ships of the Greeks filled with goods.\nAfter the unjust rape of Cassandra\nBefore my statue, in my own temple\nBut the time is up, we must not bother\nThe clever man or those who aided him\nOdysseus did not rape Cassandra,\nthough he may be a man of many turns.\nThe Phaeacians did not wrong you\nAnd Odysseus will journey again,\nAs Teiresias told, to make amends\nTo sacrifice to you and all the gods.”",
+     "And so she looked to stubborn Poseidon\nThe ruler of the seas and earth-shaker.",
+     "He stood unyielding, his anger boiling\n“Alcinous was warned by a prophecy\nYet he continued, helping every man,\nNo matter if good or bad, who drifts here\nI stand by my word until given sea\nAnd sacrifices made by Odysseus\nNo boat or ship shall exit this island\nUntil Odysseus’s pledge to the gods\nEven now, one is anchored to your shores.\nScheria’s suffering for lack of trade\nIs not attributed to my actions\nBut to Zeus, controller of many minds,\nAnd to the Phaeacian royal family.\nFor their actions were wrong in this matter\nHowever, after the cunning man’s pledge,\nyou will once again prosper on the sea.\nThis is the extent of my great mercy.”\nAnd he left, diving into the ocean\nLeaving all the boats still stoned and useless",
+     "Athena left Alcinous a fine strand\nOf the best silk that can be found through trade\nA great never-ending strand for his wife\n“There will be a long battle between gods.\nDemodocus will soon sing in your halls.\nHeed his warnings with the utmost of care.”\nAnd with this, she departed from the land\nMorphing into an owl, looking down\nAt the olive tree, its branches spread out\nOverlooking the chaos that followed\nAnd pitiful victim receiving news\nA guard had run up to wise Alcinous\nStuttering, explaining the strange event\nA bald eagle had chipped away at the stone ship\nShaping it to resemble a large bed\nImmovable, as if made from a tree\nThe waters surrounding had turned murky\nThe people were fighting, praying to god,\nPoseidon, who heard their prayers and wails\nBut waited for Odysseus to pray\nAnd sacrifice to him before breaking\nthe punishment to the Phaeacians.",
+     "Alcinous rushed away to witness this,\nThe great spectacle of the century\nAnd then to his special place, his garden\nWhere Odysseus had once sat in wait\nTo see the Pallas Athena’s statue\nAnd to worship Poseidon for mercy\nAnd after he exited, a stranger\nDraped in seaweed, gasping in deep breaths\nSwept onto the shores, waves crashing about\nEverywhere but his body, caked with sand\nEagles circling around his handsome face\nEver-suffering, sleep was poured on him\nUntil rosy-fingered Dawn rose again."
+    ]
+   },
+   {
+    "h": "Book 3",
+    "p": [
+     "As Dawn rose with its rosy-fingers spread,\nNobles were screaming at one another\nDiscussing the cause behind the water,\nThe lifeless sea creatures floating about\nThe great immovable ship, standing there\nbetween the rocky shores and the blue waves\nBulls were being slaughtered in the village\nThe dark blood running down into the streets\nAll sacrificed to mighty Posiedon",
+     "Then the man walked in, his being turning\nthe heads of all the persons in that room\nA bald eagle perched on his right shoulder.\nThe stranger’s body was clean, with freckles\nOf salt, catching the light like small Zeusites\nSome burly guards following behind him\nTheir hands twitching, their faces hesitant\nGreat Alcinous stepped forward, his face grim,\nHe demanded, glancing at everyone\n“Who are you, stranger? Why have you come here?\nWe are isolated from outsiders,\nIt is no easy feat to come find us.\nSurely Zeus would understand our problem”\nThe court nobles added, their eyes watching,\nMurmurs arose and glances were exchanged\nSoon, the guards pushed the stranger to the floor.",
+     "He looked to Demodocus, the blind bard,\n“Sing, famed poet, sing the city of Athens\nAnd the story about its patronage!\nSing of the contest between Athena\nAnd Posiedon to decide patronage”",
+     "And so Demodocus was inspired\nby the gods at Mount Olympus above.\nHe stepped forward, having found a great tale.\nHe started with how witty Athena\nand Poseidon saw Athens’s potential.\nThey held a contest at Acropolis.\nBoth gods sank their weapons into the ground.\nFrom Poseidon’s trident came a fine horse.\nFrom Athena’s spear grew an olive tree.\nKing Cecrops chose Athena because her\ngifts would be useful to the city.\nThe city was named Athens to honor\nthe owl-eyed goddess. So the poet sang.",
+     "The man rose, shaking off the soldiers,\n“History will repeat, great Alcinous.\nListen to the story of Eumaes,\nthe lost prince and one who kept his honor.\nOdysseus has returned to his wife,\nwhite-armed Penelope and his own son.\nHe did not return a king, but disguised\nas a beggar, having to fight for food.\nHe visited Eumaes, the swineherd\nwho welcomed him as if he was a prince,\nsleeping outside, listening to the tales\ntold by Odysseus of his journey.\nEumaes gave the best of what he had”",
+     "The Phaeacians listened to the stranger\nbut Euryalus spoke up, his eyes raging,\n“Great Alcinous, you are a mighty king.\nSurely you understand the intention\nbehind the story by this wicked man.\nPunish him for angering Poseidon.\nKeeping him here will bring more punishment.\nLet us send him into the deep ocean\nand use him as a sacrifice to god.”\nAnd so he gestured, before anyone\ncould argue, grabbing the stranger’s arms and legs.\nMany noblemen joined him, marching to\nthe ocean to drown the cunning stranger.",
+     "And there everyone watched as they put him\nonto a boat made out of broken wood\nIt was crafted before the statue of\nPoseidon himself, to get his blessing.\nYet one could tell the boat would not last\nEuryalus spoke, excited to see it,\n“Let us send you back to your home, stranger.\nMay you have a hearty life with Hades.”\nHe pushed the boat into the blue ocean\nIt only travelled for some short distance\nBefore it slowly sank, leaving nothing\nabove the land, exposed to air.",
+     "So helpless was the stranger, latching on\nto the broken boards, gulping down water\nand waving his arms like a bird,\nhe was so unsuccessful that he seemed\nlike a bird with clipped wings,\nunable to fly no matter how hard he tried."
+    ]
+   },
+   {
+    "h": "Book 4",
+    "p": [
+     "Then, the servants brought bulls to sacrifice\nas a final rite to the earth-shaker.\nAs the tide calmed, lightning crashed from above.\nZeus, Xenios, was enraged by this scorn,\nsuch a blatant disrespect. He gathered\nhis thunderbolts, and left on his golden\nchariot for the Phaeacian island,\nwhere the sea-god Poseidon stood in pride.",
+     "Zeus arrived at the site of the stone ship,\non the seafloor. His voice boomed in anger:",
+     "“Brother! How dare you invoke disrespect\nin the minds of those who accept strangers?\nTheir foul acts forsake hospitality.”\nThunder sounded, clouds gathered above sea.",
+     "Poseidon listened calmly through the\nwater, his response quiet and careful:\n“Brother, answer me this, how does one\njustify hospitality towards those\nwith bad intentions? Not all are worthy,\nand it should not be given plentifully.\nOdysseus has wronged me, he has torn\nthe hearts of many. The Phaeacians knew\nof his wrongdoings, yet still they helped him.”",
+     "The sea then rose in retaliation,\nit crashed from below.\nThen, the bright-eyed Athena swooped down from\nthe trees, she turned back to her godly form.\nIn between the tides and the sky, she first\naddressed her father Zeus, Lord of Thunder.\n“Father, your justice remains unquestioned,\nyou defend the virtues by which you stand.\nEven so, these waters are the domain\nof Poseidon – he controls the sea and\nthe land it engulfs.\nUsing their magical ships, the people\nof Scheria have already defied\nthe limits of their patron Poseidon.\nHe has warned of the consequences of\nhelping strangers in the past, warnings\nthat went on to be ignored entirely.\nThe ruin of one ship helped stop all others\nfrom destroying the order, the sacred balance\nbetween man and god.\nI suggest you allow the Phaeacians\nto retain their honor, and retire\ntheir ships for the use of helping strangers.\nStill, justice rests in your hands alone. You,\nthe father of gods and of men, only\nyou know best how to maintain harmony.”",
+     "The air was struck with Zeus’s silence, as\nhe carefully weighed Athena’s sound words.",
+     "“My dear child, your words are wise and measured.\nIndeed, is important to maintain\nthe order between the mortals and gods.\nYet this act pushes the bounds of justice.\nEven the sea must answer to the sky.\nThe punishment of the Phaeacians must\nnot escalate further, no more harm can\nbe done to the island of Scheria.\nThis matter is settled, let each god hold\nto their own realm, let them trouble no more.”",
+     "Thus, clouds cleared and sunlight shone on the sea.\nZeus rode his golden chariot up to his\neternal abode in Mount Olympus,\nand Posiedon, trident in hand, rode back\nto the ocean depths, his work was settled.",
+     "The stone ship itself laid on the seafloor,\nits sails wrapped around the mast, pulled by ropes,\nit could not be seen from the land above.",
+     "Yet sometimes, when the tides pull away and\nthe sky is without any clouds, when bright\nsunlight shines on the seas of Scheria,\nthe ship’s strong ram can be seen from afar."
+    ]
+   }
+  ]
+ }
+];

@@ -5,7 +5,7 @@ document.documentElement.classList.add('js');
 const cd=q('#cd'),cr=q('#cr'),lab=cr.firstElementChild,pv=q('#pv'),fa=q('.fogA'),fb=q('.fogB'),dots=q('#dots');
 let tx=-100,ty=-100,x=-100,y=-100,px=0,py=0,pt;
 /* cursor */
-const label=t=>!t?'':t.dataset.cur||(t.matches('canvas')?'Explore':t.matches('summary')?'Toggle':t.matches('.cb,.mn')?'Inspect':t.matches('input')?'Type':t.matches('a.row')?'Open':'');
+const label=t=>!t?'':t.dataset.cur||(t.matches('canvas')?'Explore':t.matches('summary')?'Toggle':t.matches('.fc')?'Flip':t.matches('.cb,.mn')?'Inspect':t.matches('input')?'Type':t.matches('a.row')?'Open':'');
 const mag=e=>{if(still)return;document.querySelectorAll('.mag').forEach(el=>{const r=el.getBoundingClientRect(),dx=e.clientX-r.left-r.width/2,dy=e.clientY-r.top-r.height/2;el.style.transform=Math.hypot(dx,dy)<90?`translate(${dx*.22}px,${dy*.22}px)`:''})};
 if(fine){document.body.classList.add('cur');
  addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;cd.style.transform=`translate(${tx}px,${ty}px)`;document.body.style.setProperty('--mx',tx+'px');document.body.style.setProperty('--my',ty+'px');mag(e)},{passive:true});
@@ -26,7 +26,7 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 /* section dots */
 dots.innerHTML=Object.keys(S).map(k=>`<a href="#/s/${k}" data-cur="${S[k].n}" title="${S[k].n}" aria-label="${S[k].n}"><i></i></a>`).join('');
 function after(){const h=location.hash.split('/'),home=!h[1];
- const sec=h[1]==='s'?h[2]:h[1]==='p'?((P.find(p=>p.id===h[2])||{}).s||''):'';
+ const sec=h[1]==='s'?h[2]:h[1]==='p'?((P.find(p=>p.id===h[2])||{}).s||''):h[1]==='blog'?'writing':'';
  document.body.dataset.sec=sec;dots.hidden=home;
  [...dots.children].forEach((a,i)=>{const on=Object.keys(S)[i]===sec;a.classList.toggle('on',on);on?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
  document.querySelectorAll('#nav a,.chip').forEach(el=>el.classList.add('mag'));
